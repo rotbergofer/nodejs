@@ -10,10 +10,24 @@ var con = mysql.createConnection({
 var adr = 'Mountain 21';
 
 con.connect(function(err) {
-  if (err) throw err;
-  var sql= 'DROP TABLE customers';
-  con.query (sql , function (err, result) {
     if (err) throw err;
-    console.log("Table Deleted");
+    var sql1= 'CREATE TABLE users';
+    var sql2 = "INSERT INTO users (name,favo_product) VALUES ?";
+    var values = [
+        ['John', 154],
+        [ 'Peter',154],
+        ['Amy',155],
+        [ 'Hannah',],
+        [ 'Michael',]
+      ];
+    con.query (sql1 , function (err, result) {
+        if (err) throw err;
+        console.log("Table Created");
     });
+    con.query (sql2,function (err, result) {
+        if (err) throw err;
+        console.log("Values Inserted");
+        console.log("Number of rows: " + result.affectedRows);
+    });
+
 });
