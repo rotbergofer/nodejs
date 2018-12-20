@@ -11,9 +11,9 @@ var adr = 'Mountain 21';
 
 con.connect(function(err) {
   if (err) throw err;
-  var sql= 'SELECT name,address FROM customers ORDER BY name';
+  var sql= 'DROP TABLE customers';
   con.query (sql , function (err, result) {
     if (err) throw err;
-    console.log(result);
+    console.log("Table Deleted");
     });
 });
