@@ -7,9 +7,12 @@ var con = mysql.createConnection({
   database: "mydb"
 });
 
+var adr = 'Mountain 21';
+
 con.connect(function(err) {
   if (err) throw err;
-  con.query ( "SELECT name,address FROM customers WHERE address LIKE 'S%'", function (err, result,fields) {
+  var sql= 'SELECT name,address FROM customers WHERE address = '+ mysql.escape(adr);
+  con.query (sql , function (err, result,fields) {
     if (err) throw err;
     console.log(result);
     });
