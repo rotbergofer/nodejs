@@ -1,7 +1,7 @@
 {
   "name": "mongoproject",
   "version": "1.0.0",
-  "description": "test mongo with nidejs",
+  "description": "test mongo with nodejs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
