@@ -6,3 +6,8 @@ var server = http.createServer((function(request,response)
 	response.end("Hello World\n");
 }));
 server.listen(8080);
+
+var request = reuire("request");
+request("http://www.google.com",function(err,res,body){
+    console.log(body);
+});
