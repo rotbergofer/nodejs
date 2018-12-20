@@ -11,7 +11,7 @@ var adr = 'Mountain 21';
 
 con.connect(function(err) {
     if (err) throw err;
-    var sql1= 'CREATE TABLE users';
+    var sql1= "CREATE TABLE users (name VARCHAR(255), favo_product INT(50) )";
     var sql2 = "INSERT INTO users (name,favo_product) VALUES ?";
     var values = [
         ['John', 154],
