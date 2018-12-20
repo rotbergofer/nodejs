@@ -7,7 +7,7 @@ var server = http.createServer((function(request,response)
 }));
 server.listen(8080);
 
-var request = reuire("request");
+var request = require("request");
 request("http://www.google.com",function(err,res,body){
     console.log(body);
 });
